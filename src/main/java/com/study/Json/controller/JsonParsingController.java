@@ -1,8 +1,5 @@
-package com.jsonparsing.Json.controller;
+package com.study.Json.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,14 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
-@RequestMapping("/json")
+@RequestMapping("/study")
 public class JsonParsingController {
 
-    @GetMapping("/parsing")
+    @GetMapping("/jsonParsing")
     public ResponseEntity parsing(@RequestBody HashMap<String, Object> json){
 
     HashMap result = (HashMap) json.get("raw");
