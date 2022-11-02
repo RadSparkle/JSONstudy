@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("/study")
+@RequestMapping("/study/stream")
 public class StreamController {
 
-    @GetMapping("/stream")
-    public void stream() {
+    @GetMapping("/filter")
+    public void streamFilter() {
 
         List<String> list = Arrays.asList("a1", "a2", "b1", "b2", "c2", "c1", "c3");
 
@@ -23,5 +23,13 @@ public class StreamController {
 
         Stream<String> filtered = stream.filter(s -> s.startsWith("c"));
         filtered.forEach(System.out::println);
+    }
+
+    @GetMapping("/map")
+    public void streamMap() {
+        List<String> list =
+                Arrays.asList("a1", "a2", "b1", "b2", "c2", "c1", "c3");
+        Stream<String> stream = list.stream();
+        stream.map(s -> s.toUpperCase()).forEach(System.out::println);
     }
 }
