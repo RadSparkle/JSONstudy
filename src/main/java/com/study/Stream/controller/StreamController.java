@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 @RestController
@@ -32,4 +33,12 @@ public class StreamController {
         Stream<String> stream = list.stream();
         stream.map(s -> s.toUpperCase()).forEach(System.out::println);
     }
+
+    @GetMapping("/range")
+    public IntStream streamRange() {
+        IntStream stream = IntStream.range(4,10);
+
+        return stream;
+    }
+
 }
